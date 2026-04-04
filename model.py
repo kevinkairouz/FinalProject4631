@@ -1,11 +1,20 @@
-import pandas as pd  
-import matplotlib.pyplot as plt
-from sklearn.ensemble import RandomForestClassifier 
-from sklearn.ensemble import GradientBoostingClassifier 
-from sklearn.ensemble import VotingClassifier 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+from sklearn.linear_model import LinearRegression 
+from sklearn.ensemble import RandomForestRegressor 
+from sklearn.ensemble import GradientBoostingRegressor 
+from sklearn.model_selection import train_test_split
 
+df = pd.read_csv("social.csv")
+#print(df.isna().sum())
+df = df.dropna()  
+df = pd.get_dummies(df, columns=["addiction_level"]) 
 
-df = pd.read_csv("prompts.csv")  
-#used to check for amount of null values in our Dataframe (there are zero) 
-# print(df.isna().sum())
+X = df.drop(columns=["productivity_score"])
+Y = df["productivity_score"] 
+
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y,random_state=42)
+model = LinearRegression()
+model.fit(X_train,Y_train)
+print(model.score(X_test,Y_test))
 
