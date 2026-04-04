@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import GradientBoostingRegressor 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass 
-
+import mysql.connector as sql 
 
 @dataclass 
 class User: 
@@ -57,3 +57,6 @@ def predict(user = User):
     addicition_low: bool
 
     model.predict() 
+
+def sendPrediction():  
+    return "" 
