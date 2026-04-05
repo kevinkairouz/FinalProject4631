@@ -36,32 +36,21 @@ model.fit(X_train,Y_train)
 # benchamarked at 87.4%
 #in stock testing 
 
-def predict(age, dst, smh, sth, slh, npd): 
-    # L = [u.age, u.daily_screen_time, u.study_hours, u.sleep_hours, u.noti_per_day, 
-    #      u.addiction_high, u.addiction_mid, u.addicition_low] 
+def predict(age, dst, smh, sth, slh, npd):  
     udf = pd.DataFrame({"age": [age], "daily_screen_time": [dst], "social_media_hours": [smh], 
                         "study_hours": [sth], "sleep_hours": [slh], "notifications_per_day": [npd]}) 
-    
-    """
-    productivity score
-    
-    """
-    res = model.predict(udf)
+    res = model.predict(udf) 
+    sendPrediction(age, dst, smh, sth, slh, npd, res)
 
 def sendPrediction(age, dst, smh, sth, slh, npd, ps): 
     db = sql.connect(host = "localhost", user = "root", password = "Dominics1", database ="finalProj") 
     query = "insert into user_predictions (age, daily_screen_time, social_media_hours,study_hours,sleep_hours,notifications_per_day,productivity_score) values (%s,%s,%s,%s,%s,%s,%s)"
-    
-    
     data = (age, dst, smh, sth, slh, npd, ps)
     cursor = db.cursor() 
     cursor.execute(query,data) 
     db.commit() 
-    # db.close()
-
-    
-    
+    db.close()
     return "Success"  
 
-
-sendPrediction(25, 2.4, 4.5, 5.9, 4.0, 200, 70.5) 
+#for testing purpose 
+# sendPrediction(25, 2.4, 4.5, 5.9, 4.0, 200, 70.5) 
