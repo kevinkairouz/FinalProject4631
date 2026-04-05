@@ -1,0 +1,18 @@
+.b{
+    background: radial-gradient(rgb(0, 149, 255), skyblue); 
+    animation-name: backgroundAnimation; 
+    animation-fill-mode: reverse; 
+    animation-duration: 10s;
+    animation-delay: 3s;
+} 
+
+@keyframes backgroundAnimation { 
+    from{
+        background: radial-gradient(rgb(0, 149, 255), skyblue); 
+    } 
+    to{
+        background: radial-gradient(rgb(0, 149, 255), black); 
+    }
+    
+     
+}
