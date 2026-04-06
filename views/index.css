@@ -13,8 +13,33 @@
 
 } 
 .b{
-    background: linear-gradient(to right, rgba(0, 0, 255, 0.673), rgba(0, 128, 255, 0.818))
+    background: linear-gradient(to bottom
+    , rgba(0, 0, 255, 0.673), rgba(0, 128, 255, 0.818))
+}  
+.getButton{ 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: black;
+    background-color: whitesmoke;
+    height: 50px; 
+    width: 180px; 
+    border-radius: 20px; 
+    border-color: black; 
+    border-width: 4px; 
+    transition: background-color 0.2s, width 0.5s;
+}
+
+
+.welcome:hover{
+    letter-spacing: 5px;
 } 
+.getButton:hover{
+    background-color: burlywood; 
+    width: 200px;
+}
+
+
 @keyframes headerAni { 
     from{
         color: rgb(209, 148, 148); 
@@ -26,9 +51,6 @@
     }
 
 } 
-.welcome:hover{
-    letter-spacing: 5px;
-}
 
 
  
