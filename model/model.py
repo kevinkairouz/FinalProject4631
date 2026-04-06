@@ -23,7 +23,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y,random_state=42, test_si
 model = GradientBoostingRegressor(n_estimators=150,learning_rate=0.1) 
 model.fit(X_train,Y_train) 
 
-# print(model.score(X_test,Y_test))  
+print(model.score(X_test,Y_test))  
 
 # benchamarked at 87.4%
 #in stock testing 

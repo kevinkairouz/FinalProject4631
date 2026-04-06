@@ -1,4 +1,4 @@
-from flask import Flask, request,jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 import mysql.connector as sql 
 import model.model as m 
