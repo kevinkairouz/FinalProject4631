@@ -1,3 +1,7 @@
+.prompt{
+    font-size: 15px; 
+    transition: all 4s;
+}
 .d{
     display: flex;
     flex-direction: column;
@@ -22,7 +26,14 @@
 
 } 
 .b{
-    background: linear-gradient(to bottom, rgba(0, 0, 255, 0.673), rgba(0, 128, 255, 0.818))
+    background: linear-gradient(to left, rgba(0, 0, 255, 0.673), rgba(91, 8, 151, 0.818),rgba(0, 0, 255, 0.673), teal); 
+    background-size: 200%;  
+    background-position: 0%;
+    animation-name: sliding; 
+    animation-duration: 15s; 
+    animation-direction: alternate; 
+    animation-iteration-count: infinite; 
+   
 }    
 
 
@@ -57,6 +68,10 @@
 
 .d:hover{
     color: rgb(129, 194, 220); 
+} 
+
+.prompt:hover{
+    font-size: 25px;
 }
 
 @keyframes headerAni { 
@@ -71,5 +86,12 @@
 
 } 
 
-
+@keyframes sliding {
+    from{
+        background-position: 0%;
+    }
+    to{
+        background-position: 100%; 
+    }
+}
  

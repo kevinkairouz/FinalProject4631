@@ -9,7 +9,7 @@ from sklearn.model_selection import GridSearchCV
 
     
 
-df = pd.read_csv("../data/social.csv")
+df = pd.read_csv("data/social.csv")
 #print(df.isna().sum())
 df = df.dropna()    
 df = df.drop(columns=["addiction_level"])  
