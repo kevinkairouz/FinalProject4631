@@ -23,6 +23,11 @@ def makePrediction():
     user_sleep_hours = data["sleep_hours"] 
     user_notifications_per_day = data["notifications_per_day"] 
     pred = m.predict(user_age, user_daily_screen_time,user_social_media_hours,user_study_hours,user_sleep_hours,user_notifications_per_day)
-    return jsonify({"productivity_score": pred}) 
+    return jsonify({"productivity_score": pred})  
 
-app.run(debug=True)
+@app.route("/test", methods = ["GET"]) 
+def send5(): 
+    return jsonify({"Number": 5}) 
+
+
+app.run()
