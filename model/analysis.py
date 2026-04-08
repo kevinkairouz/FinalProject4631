@@ -35,10 +35,4 @@ axis[1,1].set_ylabel("Productivity")
 
 plt.show()
 
-# Correlation of sleeping and productivity 
-# Correlation of studying and productivity
-# plt.scatter(df["sleep_hours"], df["productivity_score"])
-# plt.scatter(df["study_hours"], df["productivity_score"])
-
-
-# plt.show()
+#TODO: save figure so you can display image on the site
