@@ -29,15 +29,5 @@ axis[1,1].scatter(df["social_media_hours"], df["productivity_score"], color = "b
 axis[1,1].set_title("Social Media Hours & Productivity") 
 axis[1,1].set_xlabel("Hours on Social Media") 
 axis[1,1].set_ylabel("Productivity")
- 
-
-
-
-
-
-
-
 
 plt.show()
-
-#TODO: save figure so you can display image on the site
