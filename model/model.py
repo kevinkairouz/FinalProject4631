@@ -46,7 +46,7 @@ def sendPrediction(age, dst, smh, sth, slh, npd, ps):
 
 # for testing purpose 
 # sendPrediction(25, 2.4, 4.5, 5.9, 4.0, 200, 70.5) 
-predict(25,3,5,7,7,93) 
+# predict(25,3,5,7,7,93) 
 
 
 #2: Have a histogram for the ages to show diversity within the data ie meaning we can 
