@@ -1,2 +1,1 @@
-1: Do Visualization X 
-2: Write paper and mention diversity in data and correlation 
+1: Write paper and mention diversity in data and correlation 
