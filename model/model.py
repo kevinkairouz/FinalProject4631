@@ -3,36 +3,36 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression  
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor, AdaBoostRegressor
 from sklearn.model_selection import train_test_split
-from dataclasses import dataclass 
-import mysql.connector as sql 
-from sklearn.model_selection import GridSearchCV
+import mysql.connector as sql  
+import numpy as np
 
     
 
 df = pd.read_csv("data/social.csv")
 #print(df.isna().sum())
 df = df.dropna()    
-df = df.drop(columns=["addiction_level"])  
-print(df.info())
+df = df.drop(columns=["addiction_level", "focus_score"])  
+# print(df.info())
 df["age"] = pd.to_numeric(df["age"], downcast="integer") 
 df["notifications_per_day"] = pd.to_numeric(df["notifications_per_day"], downcast="integer")
 X = df.drop(columns=["productivity_score"])
 Y = df["productivity_score"]
 
+
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y,random_state=42, test_size=0.3)
 model = GradientBoostingRegressor(n_estimators=150,learning_rate=0.1) 
 model.fit(X_train,Y_train) 
 
-print(model.score(X_test,Y_test))  
+# print(model.score(X_test,Y_test))  
 
 # benchamarked at 87.4%
 #in stock testing 
 
-def predict(age, dst, smh, sth, slh, npd):  
-    udf = pd.DataFrame({"age": [age], "daily_screen_time": [dst], "social_media_hours": [smh], 
-                        "study_hours": [sth], "sleep_hours": [slh], "notifications_per_day": [npd]}) 
-    res = model.predict(udf) 
-    sendPrediction(age, dst, smh, sth, slh, npd, res)
+def predict(age, dst, smh, sth, slh, npd): 
+    a = np.array([age, dst, smh, sth, slh, npd])  
+    res = model.predict([a]) 
+    sendPrediction(age, dst, smh, sth, slh, npd, res[0])
+    return res[0]
 
 def sendPrediction(age, dst, smh, sth, slh, npd, ps): 
     db = sql.connect(host = "localhost", user = "root", password = "Dominics1", database ="finalProj") 
@@ -44,20 +44,10 @@ def sendPrediction(age, dst, smh, sth, slh, npd, ps):
     db.close()
     return "Success"  
 
-#for testing purpose 
+# for testing purpose 
 # sendPrediction(25, 2.4, 4.5, 5.9, 4.0, 200, 70.5) 
+predict(25,3,5,7,7,93) 
 
-#TODO: 
-#1: Have a scatter plot to show correlation whether it 
-#is positive or negative for the following relationships  
-#make it a subplot that has 4 charts 
-"""
-Sleep Hours => Productivity Score 
-Study Hours => Productivity Score 
-Notifications Per Day => Social Media Time  
-Age => Social Media Time 
-
-""" 
 
 #2: Have a histogram for the ages to show diversity within the data ie meaning we can 
 # defend our work  
@@ -73,9 +63,3 @@ is not a concern for our model
 #3: Create a bar chart that indicate what our averages are in the data, ie what is the avg for 
 #age, social media time, and we can go further to say for each age range what is the average time 
 
-
-"""
-This gives us an oppurtunity to showcase analytical processes
-
-
-"""

@@ -1,3 +1,2 @@
-1: Do Visualization 
-2: Create Routes folder & create a db blueprint & predict blueprint 
-=> for file/system artecheuire 
+1: Do Visualization X 
+2: Write paper and mention diversity in data and correlation 
