@@ -1,14 +1,16 @@
 async function fetchData(){   
-    //TODO: will fix function and implement to send the data by using getElementByID and putting it in a varable 
-    //and sending it to the server
-    let response = await fetch("http://127.0.0.1:5000/test") 
-    let data = response.json() 
-    console.log(data)
+    let age = document.getElementById("Age").value 
+    let screen_time = document.getElementById("ScreenTime").value 
+    let social_hours = document.getElementById("SocialHours").value 
+    let study_hours = document.getElementById("StudyHours").value 
+    let sleep_hours = document.getElementById("SleepHours").value 
+    let notis = document.getElementById("Noti").value  
+
+    //TODO: fix on sending the data to the server to get the response 
+    //back and print it to the console
+    let prediction = await fetch("http://127.0.0.1:5000/predict")
     
-    
-    
-    // console.log("HELLO IVE BEEN TAPPED")
-    // return "" 
+    console.log(prediction); 
+    return "SUCCESS"; 
 }
 
-//TODO: work on the simple js function and print the result to the console
