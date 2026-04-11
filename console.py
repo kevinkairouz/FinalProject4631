@@ -19,14 +19,15 @@ model.fit(X_train,Y_train)
 
 
 while True: 
-    age = int(input("Enter Age")) 
+    age = int(input("Enter Age: ")) 
     dst = float(input("Enter Daily Screen Time: "))
     smh = float(input("Enter Social Media Hours: ")) 
     sth = float(input("Enter Study Hours: ")) 
     sh = float(input("Enter Sleep Hours: "))
     npd = int(input("Enter Notifications Per Day: "))
     arr = np.array([age, dst, smh, sth, sh, npd]) 
-    print(model.predict(arr)) 
+    res = model.predict([arr]) 
+    print(f"Your productivity score is {res[0]}")
     choice = str(input("Would you like to go again? (Y or N)")) 
     choice = choice.upper() 
     if choice == "Y": 
