@@ -1,9 +1,6 @@
 import pandas as pd 
-import matplotlib.pyplot as plt 
-from sklearn.linear_model import LinearRegression  
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor, AdaBoostRegressor
 from sklearn.model_selection import train_test_split
-import mysql.connector as sql  
 import numpy as np
 
 df = pd.read_csv("data/social.csv")
