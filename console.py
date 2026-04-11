@@ -36,6 +36,8 @@ while True:
 fig, axis = plt.subplots(2, 2, layout="constrained") 
 
 
+df = df.sample(20)
+
 axis[0,0].scatter(df["sleep_hours"], df["productivity_score"], color = "orange")   
 axis[0,0].set_title("Sleep Hours & Productivity") 
 axis[0,0].set_xlabel("Hours of Sleep") 
