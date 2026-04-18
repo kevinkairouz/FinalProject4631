@@ -32,16 +32,10 @@ axis[1,1].set_xlabel("Hours on Social Media")
 axis[1,1].set_ylabel("Productivity") 
 
 
-
-
-
 plt.show()
-
-
-
-
-plt.scatter(m.X_test["age"][0:25],m.Ypred[0:25], color = ["pink"], marker="*", linewidths=2.5) 
-plt.scatter(m.X_test["age"][0:25],m.Y_test[0:25], color = ["black"], marker="P", linewidths=2.5)  
+plt.scatter(m.X_test["age"][0:25],m.Ypred[0:25], color = ["pink"], marker="*", linewidths=2.5, label = "Prediction") 
+plt.scatter(m.X_test["age"][0:25],m.Y_test[0:25], color = ["black"], marker="P", linewidths=2.5, label = "Actual Y LABEL/SCORE")  
 plt.title("Gradient Boosted Predictions vs Actual Y Values") 
-plt.legend()
+plt.legend() 
+plt.tight_layout()
 plt.show()
