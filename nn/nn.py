@@ -2,7 +2,8 @@ import torch
 import torch.nn 
 import torch.functional as f 
 from sklearn.model_selection import train_test_split 
-from torch.utils.data import DataLoader 
+from torch.utils.data import DataLoader, TensorDataset 
+
 
 
 #Possible that pytorch nn (fully connected/linear nn is made for testing/implementation purpose) 
