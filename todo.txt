@@ -1,6 +1,2 @@
 1: Write paper and mention diversity in data and correlation
-
-#TODO: fix the scatter plot to make sure that it is a sample size to compare the differences 
-#between the predictions and correct answers for Y 
-
-#TODO: work on Pytorch neural network 
+#TODO: work on Pytorch neural network X 

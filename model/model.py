@@ -35,13 +35,11 @@ model.fit(X_train,Y_train)
 #  that penalizes unnecessary model complexity, useful for comparing models with different numbers of predictors, as explained in this YouTube video. 
 
 Ypred = model.predict(X_test) 
-print("Mean Absolute Error: ")
-print(mean_absolute_error(Y_test,Ypred))  
 
-print("R2 Score: ") 
-# accuracy is benchamarked at 88.2%
-print(model.score(X_test,Y_test))  
-#in stock testing 
+mae = mean_absolute_error(Y_test,Ypred)
+# accuracy/r2 is benchamarked at 88.2%
+r2 = model.score(X_test,Y_test)  
+
 
 def predict(age, dst, smh, sth, slh, npd): 
     a = np.array([age, dst, smh, sth, slh, npd])  
