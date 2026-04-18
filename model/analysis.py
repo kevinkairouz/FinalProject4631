@@ -40,7 +40,8 @@ plt.show()
 
 
 
-plt.scatter(m.X_test["age"],m.Ypred, color = ["pink"]) 
-plt.scatter(m.X_test["age"],m.Y_test, color = ["black"])  
-
+plt.scatter(m.X_test["age"][0:25],m.Ypred[0:25], color = ["pink"], marker="*", linewidths=2.5) 
+plt.scatter(m.X_test["age"][0:25],m.Y_test[0:25], color = ["black"], marker="P", linewidths=2.5)  
+plt.title("Gradient Boosted Predictions vs Actual Y Values") 
+plt.legend()
 plt.show()
