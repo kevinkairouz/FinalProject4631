@@ -1,2 +1,1 @@
 1: Write paper and mention diversity in data and correlation
-2: Create console.py so anyone can test the application via a console
