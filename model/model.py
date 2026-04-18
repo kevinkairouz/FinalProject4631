@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression  
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor, AdaBoostRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, r2_score
 import mysql.connector as sql  
 import numpy as np
 
@@ -24,10 +25,22 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y,random_state=42, test_si
 model = GradientBoostingRegressor(n_estimators=150,learning_rate=0.1) 
 model.fit(X_train,Y_train)  
 
-Ypred = model.predict(X_test) 
+# Mean Absolute Error (MAE): The average absolute difference between predicted and actual values. Lower is better.
+# Root Mean Squared Error (RMSE): The square root of the average squared differences. It heavily penalizes large errors.
+# R-Squared (
+# ): Measures how well the model fits the data (typically 
 
-# benchamarked at 88.2%
-# print(model.score(X_test,Y_test))  
+# ). Higher is better.
+# Adjusted R-Squared: A version of 
+#  that penalizes unnecessary model complexity, useful for comparing models with different numbers of predictors, as explained in this YouTube video. 
+
+Ypred = model.predict(X_test) 
+print("Mean Absolute Error: ")
+print(mean_absolute_error(Y_test,Ypred))  
+
+print("R2 Score: ") 
+# accuracy is benchamarked at 88.2%
+print(model.score(X_test,Y_test))  
 #in stock testing 
 
 def predict(age, dst, smh, sth, slh, npd): 
