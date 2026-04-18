@@ -1,6 +1,7 @@
 import pandas as pd 
 import matplotlib.pyplot as plt  
-
+import model as m  
+import numpy as np
 
 df = pd.read_csv("../data/social.csv").sample(20)  
 
@@ -28,6 +29,18 @@ axis[1,0].set_ylabel("Hours of Sleep")
 axis[1,1].scatter(df["social_media_hours"], df["productivity_score"], color = "brown")
 axis[1,1].set_title("Social Media Hours & Productivity") 
 axis[1,1].set_xlabel("Hours on Social Media") 
-axis[1,1].set_ylabel("Productivity")
+axis[1,1].set_ylabel("Productivity") 
+
+
+
+
+
+plt.show()
+
+
+
+
+plt.scatter(m.X_test["age"],m.Ypred, color = ["pink"]) 
+plt.scatter(m.X_test["age"],m.Y_test, color = ["black"])  
 
 plt.show()
