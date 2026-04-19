@@ -1,3 +1,0 @@
-1: Write paper and mention diversity in data and correlation
-#TODO: work on Pytorch neural network X 
-#TODO: fix/modify console.py
