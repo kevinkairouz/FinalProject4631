@@ -10,10 +10,10 @@ import numpy as np
 
     
 # first file path is used for the api when backend is activated/server is up and running 
-# df = pd.read_csv("data/social.csv") 
+df = pd.read_csv("data/social.csv") 
 
 
-df = pd.read_csv("../data/social.csv")
+# df = pd.read_csv("../data/social.csv")
 #print(df.isna().sum())
 df = df.dropna()    
 df = df.drop(columns=["addiction_level", "focus_score"])  

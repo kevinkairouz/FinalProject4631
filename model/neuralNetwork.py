@@ -96,3 +96,10 @@ with torch.no_grad():
 
 
 
+def nnPrediction(age, dst, smh, sth, slh, npd): 
+    arr = np.array([age, dst, smh, sth, slh, npd]) 
+    arr = torch.FloatTensor(arr) 
+    result = nn(arr)
+    return result
+
+

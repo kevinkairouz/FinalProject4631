@@ -12,7 +12,7 @@ CORS(app)
 def greeting(): 
     return "Welcome"
 
-@app.route("/predict", methods = ["POST"])
+@app.route("/predictGB", methods = ["POST"])
 @cross_origin()
 def makePrediction(): 
     data = request.json
@@ -31,7 +31,12 @@ def makePrediction():
     user_notifications_per_day = int(user_notifications_per_day) 
     
     pred = m.predict(user_age, user_daily_screen_time,user_social_media_hours,user_study_hours,user_sleep_hours,user_notifications_per_day)
-    return jsonify({"productivity_score": pred})  
+    return jsonify({"productivity_score": pred})
+
+@app.route("/predictNN", methods = ["POST"]) 
+@cross_origin 
+def predictNN(): 
+    return None  
 
 @app.route("/test", methods = ["GET"]) 
 def send5(): 
