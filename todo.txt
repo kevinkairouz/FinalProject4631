@@ -1,0 +1,8 @@
+WEBAPP BRANCH 
+
+1: FIX FILE PATH FOR SOCIAL.CSV for the backend 
+2: In the backend include a route for neural network and one for Gradient Boosting 
+3: In the frontend include a button for gradient boositng and one for neural network  
+4: Remove Console.py since this is not a console application 
+5: Modify the NN code so you can create a function that allows for a prediciton and then call it in backend 
+6: Modify backend for each button so it shows the visualizations in the console
