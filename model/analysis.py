@@ -1,6 +1,8 @@
 import pandas as pd 
 import matplotlib.pyplot as plt  
-import model as m  
+import model as m
+import neuralNetwork as neuralNetwork
+
 import numpy as np
 
 df = pd.read_csv("../data/social.csv").sample(20)  
@@ -33,9 +35,31 @@ axis[1,1].set_ylabel("Productivity")
 
 
 plt.show()
+
 plt.scatter(m.X_test["age"][0:25],m.Ypred[0:25], color = ["pink"], marker="*", linewidths=2.5, label = "Prediction") 
 plt.scatter(m.X_test["age"][0:25],m.Y_test[0:25], color = ["black"], marker="P", linewidths=2.5, label = "Actual Y LABEL/SCORE")  
 plt.title("Gradient Boosted Predictions vs Actual Y Values") 
 plt.legend() 
 plt.tight_layout()
 plt.show()
+
+
+nn_r2 = neuralNetwork.r2_score 
+nn_mae = neuralNetwork.mae_score 
+
+gb_r2 = m.r2 
+gb_mae = m.mae 
+ 
+fig, axis = plt.subplots(1,2) 
+
+axis[0].bar([0, 1],[nn_r2, gb_r2], color = ["green", "orange"], label = ["Neural Network", "Gradient Boosting"])  
+axis[0].set_title("R2 Score Comparison (Green: NN, Orange: GBoost)")
+
+
+
+axis[1].bar([0, 1], [nn_mae,gb_mae], color = ["green", "orange"], label = ["Neural Network", "Gradient Boosting"])
+axis[1].set_title("Mean Absolute Error Comparison (Green: NN, Orange: GBoost)")
+
+plt.tight_layout() 
+plt.show() 
+
