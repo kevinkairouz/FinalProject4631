@@ -34,7 +34,7 @@ Ypred = model.predict(X_test)
 mae = mean_absolute_error(Y_test,Ypred)
 # accuracy/r2 is benchamarked at 88.2%
 r2 = model.score(X_test,Y_test)  
-print(r2) 
+print(f" gb is {r2}") 
 
 
 def predict(age, dst, smh, sth, slh, npd): 
