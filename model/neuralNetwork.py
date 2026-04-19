@@ -63,9 +63,7 @@ for epoch in range(num_epochs):
         optimizer.zero_grad() 
         output = nn(x_data)
         output = output.squeeze() 
-        
         loss = loss_func(output, y_data) 
-         
         loss.backward() 
         optimizer.step() 
     print(loss)
