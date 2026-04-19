@@ -32,6 +32,10 @@ A full-stack machine learning application that predicts a user's productivity sc
 ├── index.css                 # Frontend styles
 ├── index.js                  # Frontend logic (fetch API calls)
 └── requirements.txt          # Required libraries
+└── TUTORIAL.txt              # Tutorial/Explanation
+└── nn.drawio                 # File used to help draw Neural Network
+
+
 ```
 
 ---
