@@ -85,9 +85,12 @@ with torch.no_grad():
     Y_pred = nn(X_test) 
     Y_pred = Y_pred.squeeze() 
     print(Y_pred.shape) 
-    print(Y_test.shape)
+    print(Y_test.shape) 
+    
     r2_score = r2(Y_pred, Y_test)  
     mae_score = mean_absolute_error(Y_pred,Y_test)
+    print(f"r2 nn: {r2_score}")
+    print(f"mae nn: {mae_score}")
     #looked to be 88.9/89% r2 score
     # print(r2_score)
 
