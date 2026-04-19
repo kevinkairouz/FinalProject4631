@@ -8,8 +8,10 @@ import mysql.connector as sql
 import numpy as np
 
     
-
+# first file path is used for the api when backend is activated/server is up and running 
 # df = pd.read_csv("data/social.csv") 
+
+
 df = pd.read_csv("../data/social.csv")
 #print(df.isna().sum())
 df = df.dropna()    
@@ -24,15 +26,6 @@ Y = df["productivity_score"]
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y,random_state=42, test_size=0.3)
 model = GradientBoostingRegressor(n_estimators=150,learning_rate=0.1) 
 model.fit(X_train,Y_train)  
-
-# Mean Absolute Error (MAE): The average absolute difference between predicted and actual values. Lower is better.
-# Root Mean Squared Error (RMSE): The square root of the average squared differences. It heavily penalizes large errors.
-# R-Squared (
-# ): Measures how well the model fits the data (typically 
-
-# ). Higher is better.
-# Adjusted R-Squared: A version of 
-#  that penalizes unnecessary model complexity, useful for comparing models with different numbers of predictors, as explained in this YouTube video. 
 
 Ypred = model.predict(X_test) 
 

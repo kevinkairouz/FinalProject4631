@@ -61,5 +61,14 @@ axis[1].bar([0, 1], [nn_mae,gb_mae], color = ["green", "orange"], label = ["Neur
 axis[1].set_title("Mean Absolute Error Comparison (Green: NN, Orange: GBoost)")
 
 plt.tight_layout() 
-plt.show() 
+plt.show()  
+
+#showing nn blueprint
+img = plt.imread("../images_analysis/nn_image.png")  
+plt.imshow(img) 
+plt.axis("off") 
+plt.show()  
+
+
+
 
