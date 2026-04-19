@@ -1,3 +1,0 @@
-How to Run model 
-1: run console.py file 
-2: Enjoy! :D
