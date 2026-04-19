@@ -67,8 +67,14 @@ plt.show()
 img = plt.imread("../images_analysis/nn_image.png")  
 plt.imshow(img) 
 plt.axis("off") 
-plt.show()  
+plt.show()   
 
+Yprednp = neuralNetwork.Y_pred.numpy() 
+Xtestnp = neuralNetwork.X_test.numpy() 
 
+plt.title("Neural Network Predictions vs Actual Y Labels")
+plt.scatter(Xtestnp[:20, 0],Yprednp[0:20],color = ["green"], label = ["Neural Network"], linewidths=3, marker="v") 
+plt.scatter(Xtestnp[:20, 0], neuralNetwork.Y_test[0:20], color = ["red"], label = ["Y Labels"], linewidths=3, marker="s")
+plt.legend()
 
-
+plt.show()
