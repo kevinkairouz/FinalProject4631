@@ -1,0 +1,5 @@
+Pytorch: Version 2.9.1 
+Pandas: Version 2.3.3 
+Numpy: Version 2.2.6 
+Sklearn: Version 1.7.2 
+Matplotlib: Version 3.10.7
