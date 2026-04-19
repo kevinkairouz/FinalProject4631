@@ -195,3 +195,8 @@ db = sql.connect(host="localhost", user="root", password="your_password", databa
 | Backend | Flask, Flask-CORS |
 | Database | MySQL |
 | Frontend | HTML, CSS, JavaScript |
+
+
+
+## How To Run
+| Please reference TUTORIAL.TXT and run console.py (located in the model folder) |
