@@ -19,7 +19,10 @@ A full-stack web application that predicts a user's productivity score based on 
 ```
 ├── model/
 │   ├── model.py              # Gradient Boosting model + predict function
-│   └── neuralNetwork.py      # PyTorch Neural Network + predict function
+│   ├── neuralNetwork.py      # PyTorch Neural Network + predict function
+│   ├── analysis.py           # EDA visualizations and model comparison charts
+│   ├── histogram.py          # Age distribution histogram
+│   └── console.py            # Console entry point (not used by web app)
 ├── data/
 │   └── social.csv            # Kaggle dataset: Social Media & Productivity
 ├── views/
