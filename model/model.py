@@ -40,7 +40,7 @@ r2 = model.score(X_test,Y_test)
 def predict(age, dst, smh, sth, slh, npd): 
     a = np.array([age, dst, smh, sth, slh, npd])  
     res = model.predict([a]) 
-    sendPrediction(age, dst, smh, sth, slh, npd, res[0])
+    # sendPrediction(age, dst, smh, sth, slh, npd, res[0])
     return res[0]
 
 def sendPrediction(age, dst, smh, sth, slh, npd, ps): 
