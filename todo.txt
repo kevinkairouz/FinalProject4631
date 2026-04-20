@@ -1,4 +1,2 @@
 WEBAPP BRANCH 
 
-3: In the frontend include a button for gradient boositng and one for neural network  
-6: Modify backend for each button so it shows the visualizations in the console

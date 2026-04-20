@@ -11,7 +11,10 @@ import numpy as np
 
 
 #Data Cleaning & Assigning X & Y labels 
-df = pd.read_csv("../data/social.csv") 
+# df = pd.read_csv("../data/social.csv") 
+
+#correct path for backend
+df = pd.read_csv("data/social.csv") 
 df = df.dropna()    
 df = df.drop(columns=["addiction_level", "focus_score"])  
 df["age"] = pd.to_numeric(df["age"], downcast="integer") 
@@ -98,7 +101,7 @@ with torch.no_grad():
 
 def nnPrediction(age, dst, smh, sth, slh, npd): 
     arr = np.array([age, dst, smh, sth, slh, npd]) 
-    arr = scaler.transform(arr)
+    arr = scaler.transform([arr])
     arr = torch.FloatTensor(arr)  
     with torch.no_grad(): 
         result = nn(arr)
