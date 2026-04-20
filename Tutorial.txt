@@ -1,0 +1,2 @@
+Run the following file: app.py (located in the root) 
+Open up html file with live server & enjoy! :D
