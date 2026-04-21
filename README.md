@@ -109,9 +109,9 @@ Batch Size: 32
 pip install pandas numpy scikit-learn matplotlib torch torchmetrics
 ```
 
-**How to Run:**
+**How to Run (ENTER THE MODEL FOLDER/DIRECTORY FIRST and then run the file):**
 ```bash
-python console.py (ENTER THE MODEL FOLDER/DIRECTORY and then run the file) 
+python console.py  
 ```
 
 ---
