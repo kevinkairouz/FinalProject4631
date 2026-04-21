@@ -37,7 +37,7 @@ r2 = model.score(X_test,Y_test)
 
 
 
-def predict(age, dst, smh, sth, slh, npd): 
+def make_predict(age, dst, smh, sth, slh, npd): 
     a = np.array([age, dst, smh, sth, slh, npd])  
     res = model.predict([a]) 
     # sendPrediction(age, dst, smh, sth, slh, npd, res[0])

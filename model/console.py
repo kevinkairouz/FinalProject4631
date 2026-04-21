@@ -1,7 +1,7 @@
 import analysis 
 import histogram 
 from neuralNetwork import nnPrediction 
-from model import model
+import model.model as m 
 
 def main(): 
     analysis  
@@ -19,7 +19,7 @@ notis = int(input("Enter Notifications: "))
 
 #Gradient Boosting Model 
 print("Gradient Boosting Prediction: ")
-print(model.predict(a, daily_screen_hours, social_media_hours, study_hours, sleep_hours, notis)) 
+print(m.make_predict(a, daily_screen_hours, social_media_hours, study_hours, sleep_hours, notis)) 
 
 
 #Neural Network 
