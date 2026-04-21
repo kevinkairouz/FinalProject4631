@@ -1,7 +1,7 @@
 import analysis 
 import histogram 
 from neuralNetwork import nnPrediction 
-from model import model
+import model as model
 
 def main(): 
     analysis  
