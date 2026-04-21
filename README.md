@@ -111,7 +111,7 @@ pip install pandas numpy scikit-learn matplotlib torch torchmetrics
 
 **How to Run:**
 ```bash
-python console.py
+python console.py (ENTER THE MODEL FOLDER/DIRECTORY and then run the file) 
 ```
 
 ---
