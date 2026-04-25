@@ -24,12 +24,12 @@ A machine learning application that predicts a user's productivity score based o
 ## Project Structure
 
 ```
-├── model/
+├── models/
 │   ├── model.py              # Gradient Boosting model + predict function
 │   ├── neuralNetwork.py      # PyTorch Neural Network training, evaluation, and predict function
 │   ├── analysis.py           # EDA visualizations and model comparison charts
 │   ├── histogram.py          # Age distribution histogram
-│   └── console.py            # Entry point — runs all analysis and visualizations
+│   └── console.py            # Entry point — runs all analysis and visualizations & asks for input to make prediction
 ├── data/
 │   └── social.csv            # Kaggle dataset: Social Media & Productivity
 ├── images_analysis/
@@ -109,7 +109,7 @@ Batch Size: 32
 pip install pandas numpy scikit-learn matplotlib torch torchmetrics
 ```
 
-**How to Run (ENTER THE MODEL FOLDER/DIRECTORY FIRST and then run the file):**
+**How to Run (ENTER THE MODELS FOLDER/DIRECTORY FIRST and then run the file):**
 ```bash
 python console.py  
 ```
